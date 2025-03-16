@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
     <!-- Προσθήκη Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="..." crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Professional Graphic Designer Portfolio - Space & Art Theme">
@@ -17,17 +17,17 @@
 
         /* Star Background Animation */
         .stars {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background: url('https://media3.giphy.com/media/rytLWOErAX1F6/giphy.gif?cid=6c09b952povkss2k1osw7ix52ra3qudflnxyd0cp94d1clh6&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=gg') repeat;
-            animation: moveStars 100s linear infinite;
-            z-index: -1;
-        }
-        @keyframes moveStars {
-            from { background-position: 0 0; }
-            to { background-position: 10000px 10000px; }
-        }
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 10%, rgba(0,0,0,0) 50%);
+    animation: moveStars 100s linear infinite;
+}
+@keyframes moveStars {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100vh); }
+}
+
 
         header { position: fixed; width: 100%; padding: 20px 50px; display: flex; justify-content: space-between; background: rgba(0, 0, 0, 0.9); z-index: 100; }
         .logo { font-size: 24px; font-weight: bold; }
@@ -155,7 +155,35 @@
     </style>
 </head>
 <body>
+<!-- Loading Screen -->
+<div id="loading-screen" style="position: fixed; width: 100%; height: 100%; background: black; display: flex; justify-content: center; align-items: center; z-index: 9999;">
+    <div style="text-align: center; color: #00d4ff; font-size: 24px;">
+        <p>Loading...</p>
+        <div class="spinner" style="border: 5px solid rgba(0, 212, 255, 0.3); border-top: 5px solid #00d4ff; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite;"></div>
+    </div>
+</div>
 
+<script>
+    window.addEventListener("load", function() {
+    setTimeout(() => document.getElementById("loading-screen").style.display = "none", 500);
+});
+
+</script>
+
+<style>
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    .spinner {
+        border: 5px solid rgba(0, 212, 255, 0.3);
+        border-top: 5px solid #00d4ff;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+    }
+</style>
     <div class="stars"></div> <!-- Star background animation -->
 
     <header>
@@ -165,6 +193,7 @@
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#certifications">Certifications</a>
+            <a href="#Social Media">Social Media</a>
         </nav>
     </header>
 
@@ -200,45 +229,66 @@
         <h2>Projects</h2>
         <div class="projects-grid">
             <div class="project-item">
-                <img src="projects/Ακριτίδης Θεόδωρος_2.jpg" alt="Project 1">
+                <img src="projects/Ακριτίδης Θεόδωρος_2-min.jpg" alt="Project 1" >
                 <p class="project-title">Poster</p>
             </div>
             <div class="project-item">
-                <img src="projects/tshirt-perspective.jpg" alt="Project 2">
+                <img src="projects/ergasia1-min.jpg" alt="Project 3" >
+                <p class="project-title">Poster 2</p>
+            </div>
+            <div class="project-item">
+                <img src="projects/aimodosia 1o epal akritidis_page-0001-min.jpg" alt="Project 3" >
+                <p class="project-title">Poster 3</p>
+            </div>
+            <div class="project-item">
+                <img src="projects/tshirt-perspective-min.jpg" alt="Project 2" >
                 <p class="project-title">T-shirt Design</p>
             </div>
             <div class="project-item">
-                <img src="projects/Screenshot_20241125_010134_OneDrive.jpg" alt="Project 3">
+                <img src="projects/final-min.jpg" alt="Project 3" >
+                    <p class="project-title">T-shirt Design 2</p>
+                </div>
+            <div class="project-item">
+                <img src="projects/Screenshot_20241125_010134_OneDrive-min.jpg" alt="Project 3" >
                 <p class="project-title">Logos</p>
             </div>
             <div class="project-item">
-                <img src="projects/Screenshot_20250314_233052_Instagram.jpg" alt="Project 3">
+                <img src="projects/LOGO2-min.jpg" alt="Project 3" >
+                <p class="project-title">Logos 2</p>
+            </div>
+            <div class="project-item">
+                <img src="projects/Screenshot_20250314_233052_Instagram-min.jpg" alt="Project 3" >
                 <p class="project-title">Notebook</p>
             </div>
             <div class="project-item">
-                <img src="projects/ff.JPG" alt="Project 3">
+                <img src="projects/ff.JPG" alt="Project 3" >
                 <p class="project-title">Website Design</p>
             </div>
             <div class="project-item">
-                <img src="projects/model.jpg" alt="Project 3">
+                <img src="projects/model-min.jpg" alt="Project 3" >
                 <p class="project-title">3D Modeling</p>
             </div>
             <div class="project-item">
-                <img src="projects/final2.jpg" alt="Project 3">
+                <img src="projects/final2-min.jpg" alt="Project 3" >
                 <p class="project-title">Digital Drawing</p>
             </div>
             <div class="project-item">
-                <img src="projects/Καταγραφή.JPG" alt="Project 3">
+                <img src="projects/Καταγραφή-min.JPG" alt="Project 3" >
                 <p class="project-title">Social Media Strategy</p>
             </div>
             <div class="project-item">
-                <img src="projects/art.gif" alt="Project 3">
+                <img src="projects/art.gif" alt="Project 3" >
                 <p class="project-title">Animated Digital Drawing</p>
             </div>
             <div class="project-item">
-                <img src="projects/LOGO2.jpg" alt="Project 3">
-                <p class="project-title">Logos 2</p>
+            <img src="projects/drawing-min.jpg" alt="Project 3" >
+                <p class="project-title">Cereal Advertising</p>
             </div>
+                <div class="project-item">
+                    <img src="projects/drawing3 brosta-min.jpg" alt="Project 3" >
+                    <img src="projects/drawing3 pisw.png" alt="Project 3" >
+                        <p class="project-title">Βusiness Card</p>
+                    </div>
         </div>
     </section>
 
@@ -257,6 +307,7 @@
     </section>
     
    <!-- Social Media Links with Icons -->
+   <section id="Social Media" class="Social Media">
 <div class="social-links" style="text-align: center; margin-top: 40px;">
     <a href="https://www.instagram.com/akritidiss.s" target="_blank" style="margin: 0 15px; text-decoration: none; font-size: 18px; color: white; transition: color 0.3s;">
         <i class="fab fa-instagram" style="font-size: 24px;"></i> Instagram
