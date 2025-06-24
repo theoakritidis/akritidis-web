@@ -1,360 +1,81 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="en"> 
 <head>
-<!-- Προσθήκη Font Awesome CDN -->
-<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="..." rel="stylesheet"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Professional Graphic Designer Portfolio - Space &amp; Art Theme" name="description"/>
-<meta content="graphic design, space theme, portfolio, UI/UX, branding" name="keywords"/>
-<meta content="Your Name" name="author"/>
-<title>Home</title>
-<style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Orbitron', sans-serif; color: #fff; }
-        body { background: black; overflow-x: hidden; position: relative; }
-
-        /* Star Background Animation */
-        .stars {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(255,255,255,0.3) 10%, rgba(0,0,0,0) 50%);
-    animation: moveStars 100s linear infinite;
-}
-@keyframes moveStars {
-    from { transform: translateY(0); }
-    to { transform: translateY(-100vh); }
-}
-
-
-        header { position: fixed; width: 100%; padding: 20px 50px; display: flex; justify-content: space-between; background: rgba(0, 0, 0, 0.9); z-index: 100; }
-        .logo { font-size: 24px; font-weight: bold; }
-        nav a { margin: 0 15px; text-decoration: none; font-size: 16px; transition: 0.3s; }
-        nav a:hover { color: #00d4ff; }
-        .container { text-align: center; padding-top: 120px; }
-        .hero { font-size: 50px; font-weight: bold; margin-bottom: 20px; text-transform: uppercase; text-shadow: 0 0 10px #00d4ff; }
-        .subtext { font-size: 18px; opacity: 0.8; margin-top: 10px; }
-        .section { padding: 100px 50px; text-align: center; }
-
-        /* Projects Section */
-        .projects-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-        .project-item {
-            width: 320px;
-            position: relative;
-            border: 2px solid #00d4ff;
-            border-radius: 10px;
-            padding: 10px;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-            background: rgba(0, 0, 0, 0.5);
-            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+    <!-- Προσθήκη Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Graphic Designer Portfolio - Space & Art Theme">
+    <meta name="keywords" content="graphic design, space theme, portfolio, Akritidis">
+    <title>Akritidis Portfolio</title>
+    <style>
+        :root {
+          --bg-light: #ffffff;
+          --bg-dark: #121212;
+          --text-light: #000000;
+          --text-dark: #f0f0f0;
+          --link-light: #0000ee;
+          --link-dark: #66aaff;
         }
-        .project-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(0, 212, 255, 0.8);
+        body {
+          background-color: var(--bg-light);
+          color: var(--text-light);
+          transition: background-color 0.3s, color 0.3s;
         }
-        .project-item img {
-            width: 100%;
-            border-radius: 8px;
+        body a {
+          color: var(--link-light);
         }
-        .project-title {
-            margin-top: 10px;
-            font-size: 18px;
-            text-transform: uppercase;
+        body.dark-mode {
+          background-color: var(--bg-dark);
+          color: var(--text-dark);
         }
-
-        /* About Section */
-        #about { font-size: 18px; color: #fff; margin-top: 20px; }
-
-        /* Skills Section */
-        #skills { text-align: center; margin-top: 50px; }
-        .skills-list { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-        .skill-item { background: #00d4ff; padding: 15px 30px; border-radius: 5px; font-size: 18px; color: black; }
-
-        /* Certifications Section */
-        #certifications { margin-top: 50px; }
-        .certifications a { display: inline-block; margin-top: 10px; padding: 10px 20px; background: #00d4ff; border-radius: 5px; text-decoration: none; color: black; font-size: 18px; }
-        .certifications a:hover { background: #008cff; }
-
-        /* Contact Section */
-        .contact-form {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
-            backdrop-filter: blur(8px);
+        body.dark-mode a {
+          color: var(--link-dark);
         }
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid #00d4ff;
-            border-radius: 5px;
-            color: #fff;
-            font-size: 16px;
-        }
-        .contact-form button {
-            width: 100%;
-            padding: 10px;
-            background: #00d4ff;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .contact-form button:hover {
-            background: #008cff;
-        }
-
-        .social-links { margin-top: 20px; display: flex; justify-content: center; gap: 15px; }
-        .social-links a { font-size: 20px; transition: 0.3s; }
-        .social-links a:hover { color: #00d4ff; }
-
-        footer { text-align: center; padding: 20px; background: rgba(0, 0, 0, 0.9); }
-        footer p { color: #fff; font-size: 16px; }
-
-        /* Media Queries for Mobile Responsiveness */
-        @media screen and (max-width: 768px) {
-            .hero { font-size: 30px; }
-            .subtext { font-size: 16px; }
-
-            header { padding: 15px 20px; }
-            nav a { font-size: 14px; margin: 0 10px; }
-
-            .projects-grid { flex-direction: column; align-items: center; }
-            .project-item { width: 90%; margin: 10px 0; }
-
-            .skills-list { flex-direction: column; }
-            .skill-item { margin-bottom: 10px; }
-
-            .contact-form { width: 90%; }
-        }
-
-        @media screen and (max-width: 480px) {
-            header { padding: 10px 15px; }
-            .logo { font-size: 20px; }
-            nav a { font-size: 12px; margin: 0 5px; }
-
-            .hero { font-size: 24px; }
-            .subtext { font-size: 14px; }
-
-            .projects-grid { flex-direction: column; align-items: center; }
-            .project-item { width: 95%; }
-
-            .skills-list { flex-direction: column; }
-            .skill-item { padding: 10px 20px; }
-
-            .contact-form { width: 95%; }
+        .toggle-theme {
+          cursor: pointer;
+          font-size: 1.5rem;
+          position: fixed;
+          top: 10px;
+          right: 20px;
+          z-index: 9999;
         }
     </style>
-<style>
-:root {
-  --bg-light: #ffffff;
-  --bg-dark: #121212;
-  --text-light: #000000;
-  --text-dark: #f0f0f0;
-}
-body {
-  background-color: var(--bg-light);
-  color: var(--text-light);
-  transition: background-color 0.3s, color 0.3s;
-}
-body.dark-mode {
-  background-color: var(--bg-dark);
-  color: var(--text-dark);
-}
-.toggle-theme {
-  cursor: pointer;
-  font-size: 1.5rem;
-  position: fixed;
-  top: 10px;
-  right: 20px;
-  z-index: 9999;
-}
-</style></head>
-<body><div class="toggle-theme">🌙</div>
-<!-- Loading Screen -->
-<div id="loading-screen" style="position: fixed; width: 100%; height: 100%; background: black; display: flex; justify-content: center; align-items: center; z-index: 9999;">
-<div style="text-align: center; color: #00d4ff; font-size: 24px;">
-<p>Loading...</p>
-<div class="spinner" style="border: 5px solid rgba(0, 212, 255, 0.3); border-top: 5px solid #00d4ff; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite;"></div>
-</div>
-</div>
-<script>
-    window.addEventListener("load", function() {
-    setTimeout(() => document.getElementById("loading-screen").style.display = "none", 500);
-});
+</head>
+<body>
+  <div class="toggle-theme">🌙</div>
+  
+  <header>
+    <h1>Akritidis Web Portfolio</h1>
+    <p>Design. Art. Space. Δημιουργία με πάθος.</p>
+  </header>
 
-</script>
-<style>
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
-    .spinner {
-        border: 5px solid rgba(0, 212, 255, 0.3);
-        border-top: 5px solid #00d4ff;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        animation: spin 1s linear infinite;
-    }
-</style>
-<div class="stars"></div> <!-- Star background animation -->
-<header>
-<div class="logo">Akritidis Portfolio</div>
-<nav>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#certifications">Certifications</a>
-<a href="#Social Media">Social Media</a>
-</nav>
-</header>
-<section class="container">
-<div class="hero">Welcome to My Space</div>
-<p class="subtext">Where Art Meets the Universe</p>
-</section>
-<section class="section" id="about">
-<h2>About Me</h2>
-<p>My name is Thodoris Akritidis, and I am passionate about digital marketing and design. I am always looking for new ways to learn and improve. I specialize in graphic design, video editing, and creating strategies for social media and ads. Every project gives me the opportunity to use the latest tools and ideas to help businesses stand out. What motivates me is my desire to keep learning and getting better. The world of marketing and design is always changing, and this encourages me to stay up-to-date with new trends and give my best for my clients.</p>
-</section>
-<section class="section" id="skills">
-<h2>Skills</h2>
-<div class="skills-list">
-<div class="skill-item">Photoshop</div>
-<div class="skill-item">Illustrator</div>
-<div class="skill-item">Indesign</div>
-<div class="skill-item">Inskape</div>
-<div class="skill-item">Canva</div>
-<div class="skill-item">Website Developer</div>
-<div class="skill-item">Video Editor</div>
-<div class="skill-item">House Design &amp; 3D Modeling</div>
-<div class="skill-item">Organic Marketing: Facebook Groups For Small Businesses</div>
-<div class="skill-item">Google Ads</div>
-<div class="skill-item">Business Analysis &amp; Process Management</div>
-<div class="skill-item">Strategic Human Resource Management</div>
-</div>
-</section>
-<section class="section" id="projects">
-<h2>Projects</h2>
-<div class="projects-grid">
-<div class="project-item">
-<img alt="Project 1" loading="lazy" src="projects/Ακριτίδης Θεόδωρος_2-min.jpg"/>
-<p class="project-title">Poster</p>
-</div>
-<div class="project-item">
-<img alt="Project 3" loading="lazy" src="projects/ergasia1-min.jpg"/>
-<p class="project-title">Poster 2</p>
-</div>
-<div class="project-item">
-<img alt="Project 3" loading="lazy" src="projects/aimodosia 1o epal akritidis_page-0001-min.jpg"/>
-<p class="project-title">Poster 3</p>
-</div>
-<div class="project-item">
-<img alt="Project 3" loading="lazy" src="projects/IMG-03e6c1b82b6f486e3ffb4fdc4797b923-V.jpg"/>
-<p class="project-title">Poster 4</p>
-</div>
-<div class="project-item">
-<img alt="Project 2" loading="lazy" src="projects/tshirt-perspective-min.jpg"/>
-<p class="project-title">T-shirt Design</p>
-</div>
-<div class="project-item">
-<img alt="Project 3" loading="lazy" src="projects/final-min.jpg"/>
-<p class="project-title">T-shirt Design 2</p>
-</div>
-<div class="project-item">
-<img alt="Project 3" loading="lazy" src="projects/Screenshot_20241125_010134_OneDrive-min.jpg"/>
-<p class="project-title">Logos</p>
-</div>
-<div class="project-item">
-<img alt="Project 3" loading="lazy" src="projects/LOGO2-min.jpg"/>
-<p class="project-title">Logos 2</p>
-</div>
-<div class="project-item">
-<img alt="Project 3" loading="lazy" src="projects/Screenshot_20250314_233052_Instagram-min.jpg"/>
-<p class="project-title">Notebook</p>
-</div>
-<div class="project-item">
-<img alt="Project 3" loading="lazy" src="projects/ff.JPG"/>
-<p class="project-title">Website Design</p>
-</div>
-<div class="project-item">
-<img alt="Project 3" loading="lazy" src="projects/model-min.jpg"/>
-<p class="project-title">3D Modeling</p>
-</div>
-<div class="project-item">
-<img alt="Project 3" loading="lazy" src="projects/final2-min.jpg"/>
-<p class="project-title">Digital Drawing</p>
-</div>
-<div class="project-item">
-<img alt="Project 3" loading="lazy" src="projects/Καταγραφή-min.JPG"/>
-<p class="project-title">Social Media Strategy</p>
-</div>
-<div class="project-item">
-<img alt="Project 3" loading="lazy" src="projects/art.gif"/>
-<p class="project-title">Animated Digital Drawing</p>
-</div>
-<div class="project-item">
-<img alt="Project 3" loading="lazy" src="projects/drawing-min.jpg"/>
-<p class="project-title">Cereal Advertising</p>
-</div>
-<div class="project-item">
-<img alt="Project 3" loading="lazy" src="projects/drawing3 brosta-min.jpg"/>
-<img alt="Project 3" loading="lazy" src="projects/drawing3 pisw.png"/>
-<p class="project-title">Βusiness Card</p>
-</div>
-</div>
-</section>
-<section class="section" id="certifications">
-<h2>Certifications</h2>
-<div class="certifications">
-<a href="certifications/1.pdf" target="_blank">Use Canva to Design Digital Course Collateral</a>
-<a href="certifications/2.pdf" target="_blank">Google Ads for Beginners</a>
-<a href="certifications/3.pdf" target="_blank">Business Analysis &amp; Process Management</a>
-<a href="certifications/4.pdf" target="_blank">Organic Marketing: Facebook Groups For Small Businesses</a>
-<a href="certifications/5.pdf" target="_blank">Strategic Human Resource Management</a>
-<a href="certifications/6.pdf" target="_blank">Diploma in Social Media Strategy</a>
-<a href="certifications/Certificate_for_Theo_Akritides (1).pdf" target="_blank">Job Interview: Body Language and Non-Verbal Communication</a>
-<a href="certifications/10.pdf" target="_blank">Business Law: Protect Your Business and Ideas</a>
-</div>
-</section>
-<!-- Social Media Links with Icons -->
-<section class="Social Media" id="Social Media">
-<div class="social-links" style="text-align: center; margin-top: 40px;">
-<a href="https://www.instagram.com/akritidiss.s" style="margin: 0 15px; text-decoration: none; font-size: 18px; color: white; transition: color 0.3s;" target="_blank">
-<i class="fab fa-instagram" style="font-size: 24px;"></i> Instagram
-    </a>
-<a href="https://www.linkedin.com/in/theo-akritidis-06979832a/" style="margin: 0 15px; text-decoration: none; font-size: 18px; color: white; transition: color 0.3s;" target="_blank">
-<i class="fab fa-linkedin" style="font-size: 24px;"></i> LinkedIn
-    </a>
-<a href="https://www.facebook.com/akritidiss" style="margin: 0 15px; text-decoration: none; font-size: 18px; color: white; transition: color 0.3s;" target="_blank">
-<i class="fab fa-facebook-f" style="font-size: 24px;"></i> Facebook
-    </a>
-</div>
-<footer>
-<p>© 2025 Thodoris Akritidis. All Rights Reserved.</p>
-</footer>
-</section><script>
-document.querySelector('.toggle-theme').addEventListener('click', function() {
-  document.body.classList.toggle('dark-mode');
-  this.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-});
-</script><section id="contact">
-<h2>Επικοινωνία</h2>
-<p>Βρες με στα παρακάτω:</p>
-<div style="font-size: 1.5em;">
-<a href="mailto:your@email.com" style="margin-right: 15px;"><i class="fas fa-envelope"></i></a>
-<a href="https://instagram.com/yourprofile" style="margin-right: 15px;" target="_blank"><i class="fab fa-instagram"></i></a>
-<a href="https://facebook.com/yourprofile" style="margin-right: 15px;" target="_blank"><i class="fab fa-facebook"></i></a>
-<a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-</div>
-</section></body>
-</html>
+  <main>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="gallery">
+        <img src="projects/art.gif" alt="Art Project" loading="lazy" width="300">
+        <img src="projects/drawing-min.jpg" alt="Drawing" loading="lazy" width="300">
+        <img src="projects/drawing3 brosta-min.jpg" alt="Drawing 3 Front" loading="lazy" width="300">
+                <img src="projects/drawing3 pisw.png" alt="Drawing 3 Back" loading="lazy" width="300">
+        <img src="projects/ergasia1-min.jpg" alt="Project 1" loading="lazy" width="300">
+        <img src="projects/LOGO2-min.jpg" alt="Logo" loading="lazy" width="300">
+        <img src="projects/Screenshot_20241125_010134_OneDrive-min.jpg" alt="Screenshot OneDrive" loading="lazy" width="300">
+        <img src="projects/Screenshot_20250314_233052_Instagram-min.jpg" alt="Screenshot Instagram" loading="lazy" width="300">
+        <img src="projects/aimodosia 1o epal akritidis_page-0001-min.jpg" alt="Αιμοδοσία" loading="lazy" width="300">
+      </div>
+    </section>
+
+    <section id="certifications">
+      <h2>Πιστοποιήσεις</h2>
+      <ul>
+        <li><a href="certifications/1.pdf" target="_blank">Certificate 1</a></li>
+        <li><a href="certifications/2.pdf" target="_blank">Certificate 2</a></li>
+        <li><a href="certifications/3.pdf" target="_blank">Certificate 3</a></li>
+        <li><a href="certifications/4.pdf" target="_blank">Certificate 4</a></li>
+        <li><a href="certifications/5.pdf" target="_blank">Certificate 5</a></li>
+        <li><a href="certifications/6.pdf" target="_blank">Certificate 6</a></li>
+        <li><a href="certifications/10.pdf" target="_blank">Certificate 10</a></li>
+        <li><a href="certifications/Certificate_for_Theo_Akritides (1).pdf" target="_blank">Theo Akritidis</a></li>
+      </ul>
+    </section>
